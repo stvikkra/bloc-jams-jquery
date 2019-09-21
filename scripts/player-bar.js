@@ -13,6 +13,7 @@
 
      const previousSong = album.songs[previousSongIndex];
      player.playPause(previousSong);
+
   });
 
   $('button#next').on('click', function(){
@@ -24,6 +25,7 @@
 
      const nextSong = album.songs[nextSongIndex];
      player.playPause(nextSong);
+
   });
 
   $('#volume-control input').on('input', function (event) {
@@ -39,6 +41,7 @@
       const currentTime = player.getTime();
       const duration = player.getDuration();
       const percent = (currentTime / duration) * 100;
+      $('#time-control .total-time').text( duration );
       $('#time-control .current-time').text( currentTime );
       $('#time-control input').val(percent);
    }, 1000);
